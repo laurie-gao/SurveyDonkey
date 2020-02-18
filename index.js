@@ -18,11 +18,20 @@ app.use(
         keys: [keys.cookieKey]
     })
 );
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.initialize()); //tells passport to use cookies
+app.use(passport.session()); //end goal of middleware: attach current user onto incoming req (req.user)
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+
+    const path = require('path');
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html'));
+    })
+}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);

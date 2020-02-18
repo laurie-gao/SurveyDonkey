@@ -5,6 +5,7 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('users');
 
+//automatically called by passport with user model fetched from mongoDB in the GoogleStrategy callback
 passport.serializeUser((user, done) => {
     done(null, user.id);
 });
