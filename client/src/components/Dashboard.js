@@ -8,7 +8,9 @@ const Dashboard = () => {
       <SurveyList />
       <div className="fixed-action-btn">
         <Link to="/surveys/new" className="btn-floating btn-large red">
-          <i className="material-icons">add</i>
+          <i style={{ backgroundColor: "#f76c6c" }} className="material-icons">
+            add
+          </i>
         </Link>
       </div>
     </div>

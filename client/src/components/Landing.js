@@ -1,14 +1,12 @@
-import React from 'react';
+import React from "react";
 
 const Landing = () => {
-    return (
-        <div style={{ textAlign: 'center' }}>
-            <h1>
-                SurveyDonkey
-            </h1>
-            Collect feedback from your users
-        </div>
-    );
+  return (
+    <div className="logo_subtitle" style={{ textAlign: "center" }}>
+      <h1 className="logo_title">SurveyDonkey</h1>
+      Let us help you collect feedback from your users
+    </div>
+  );
 };
 
 export default Landing;
