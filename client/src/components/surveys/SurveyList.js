@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchSurveys } from "../../actions";
+import { fetchSurveys, deleteSurvey } from "../../actions";
 
 class SurveyList extends Component {
   componentDidMount() {
@@ -21,7 +21,12 @@ class SurveyList extends Component {
           <div className="card-action">
             <span className="response">Yes: {survey.yes}</span>
             <span className="response">No: {survey.no}</span>
-            <i className="trash material-icons">delete</i>
+            <i
+              className="trash material-icons"
+              onClick={() => this.props.deleteSurvey({ id: survey._id })}
+            >
+              delete
+            </i>
           </div>
         </div>
       );
@@ -37,4 +42,6 @@ function mapStateToProps({ surveys }) {
   return { surveys };
 }
 
-export default connect(mapStateToProps, { fetchSurveys })(SurveyList);
+export default connect(mapStateToProps, { fetchSurveys, deleteSurvey })(
+  SurveyList
+);

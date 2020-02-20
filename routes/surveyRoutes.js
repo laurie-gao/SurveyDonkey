@@ -10,6 +10,12 @@ const surveyTemplate = require("../services/emailTemplates/surveyTemplate");
 const Survey = mongoose.model("surveys");
 
 module.exports = app => {
+  app.post("/api/delete", requireLogin, async (req, res) => {
+    await Survey.deleteOne({ _id: req.body.id });
+
+    res.send({});
+  });
+
   app.get("/api/surveys", requireLogin, async (req, res) => {
     const surveys = await Survey.find({ _user: req.user.id }).select({
       recipients: false

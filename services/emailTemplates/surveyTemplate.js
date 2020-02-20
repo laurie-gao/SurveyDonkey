@@ -1,11 +1,11 @@
-const keys = require('../../config/keys');
+const keys = require("../../config/keys");
 
 module.exports = survey => {
-    return `
+  return `
         <html>
             <body>
                 <div style="text-align: center;">
-                    <h3>We want your input!</h3>
+                    <h1 style="color: #f76c6c;">We want your input!</h1>
                     <p>Please answer the following question:</p>
                     <p>${survey.body}</p>
                     <div>
@@ -14,6 +14,7 @@ module.exports = survey => {
                     <div>
                         <a href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>
                     </div>
+                    <p>From SurveyDonkey</p>
                 </div>
             </body>
         </html>
