@@ -15,7 +15,7 @@ NOTE: You need credits to send out surveys. Credits can be bought in test mode s
 
 * enter 4242 4242 4242 4242 as credit card number
 * enter any email
-* enter any reasonable expiry date and CVC
+* enter a random expiry date and CVC
 
 ## Built With
 
