@@ -1,5 +1,7 @@
 ## Visit the Site 
 
+![demo pic](https://github.com/laurie-gao/SurveyDonkey/blob/master/demo_pic.png)
+
 [SurveyDonkey Link](https://aqueous-atoll-59631.herokuapp.com/)
 
 ## Description
